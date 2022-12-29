@@ -63,7 +63,7 @@ def start_training(character):
     Возвращает сообщения о результатах цикла тренировки персонажа.
     """
     # Замените конструкцию условных операторов на словарь.
-    game_actions = {'attack': 'attack', 'defence': 'defence', 'special': 'special'}
+    game_actions = {'attack': character.attack, 'defence': character.defence, 'special': character.special}
 
     print(character)
     print('Потренируйся управлять своими навыками.')
@@ -75,7 +75,9 @@ def start_training(character):
     while cmd != 'skip':
         cmd = input('Введи команду: ')
         if cmd in game_actions:
-            print(character.game_actions[cmd]())
+            print(game_actions[cmd]())
+        else:
+            print('Такой команды нет.')
 
     return 'Тренировка окончена.'
 
