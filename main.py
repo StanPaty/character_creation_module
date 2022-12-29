@@ -75,18 +75,8 @@ def start_training(character):
     while cmd != 'skip':
         cmd = input('Введи команду: ')
         if cmd in game_actions:
-        # Вместо блока условных операторов добавьте условие
-        # принадлежности введённой команды словарю.
-        # В функции print() будет вызываться метод класса,
-        # который соответствует введённой команде.
-            print(game_actions[cmd])
-            print(character.attack())
-        # if cmd == 'attack':
-        #     print(attack(char_name, char_class))
-        # if cmd == 'defence':
-        #     print(defence(char_name, char_class))
-        # if cmd == 'special':
-        #     print(special(char_name, char_class))
+            print(character.game_actions[cmd]())
+
     return 'Тренировка окончена.'
 
 
